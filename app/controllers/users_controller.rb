@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
 
   http_basic_authenticate_with name: "raf", password: "714",
-  except: [:index, :show]
+  except: [:show, :new, :edit, :create, :update]
 
+  def index
+    
+  end
+  
   def show
     @user = User.find(params[:id])
   end
